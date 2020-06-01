@@ -588,9 +588,9 @@
           </div>
 
           <div>
-            <div class="new-child-box py-2 px-4" v-if="qrForm.uen">
-              <div class="mt-3">
-                <div class="d-flex justify-content-center">
+            <div class="new-child-box py-2 px-4" :class="{'new-top': !toggleNewTop}" v-if="qrForm.uen">
+              <div>
+                <div class="d-flex justify-content-center mt-2">
                   <div>Generated Result Preview: </div>
                 </div>
                 <div class="d-none justify-content-between align-items-center">
@@ -605,16 +605,16 @@
                     <p>Generating...</p>
                   </div>
                 </div>
-                <div class="mt-3">
+                <div>
                   <div class="text-muted tip">Tip: Try scanning the QR Code first to make sure it's readable by the PayNow QR reader before usage.</div>
                 </div>
-                <div class="my-3 d-flex justify-content-center">
+                <div class="mt-3 mb-1 d-flex justify-content-center">
                   <b-button variant="light" @click="downloadqRCodeImage">Save QR Code Image</b-button>
                 </div>
               </div>
             </div>
             <div class="new-box-container flex-column mb-5 d-flex justify-content-center align-items-center">
-                <div class="new-box px-4 pb-4">
+                <div class="new-box px-4 pb-4" >
                   <div class="d-flex justify-content-center align-items-center mb-0 my-4 flex-column">
                     <div class="logos-box mb-3">
                       <div>
@@ -1221,7 +1221,8 @@ let getInitialData = () => {
         text: 'Event\n2020',
         textAlign: 'center',
         textColor: '#000000',
-      }
+      },
+      toggleNewTop: false
     }
 }
 
@@ -1296,6 +1297,7 @@ export default {
   },
   mounted() {
     window.addEventListener('resize', this.resizeHandler)
+    window.addEventListener('scroll', this.scrollHandler);
     this.useDefaultLogo();
     this.rawDate = moment().add('years', 5).format('YYYY-MM-DD');
     this.reloadOutput();
@@ -1303,6 +1305,7 @@ export default {
   },
   destroyed(){
     window.removeEventListener('resize', this.resizeHandler);
+    window.addEventListener('scroll', this.scrollHandler);
   },
   methods: {
     padZero(str,len) {
@@ -1390,6 +1393,11 @@ export default {
     },
     resizeHandler(val){
       val.target.innerWidth <= 991 ? this.inMobile = true : this.inMobile = false;
+    },
+    scrollHandler(val){
+      let scroll = val.target.body.getBoundingClientRect().top
+      scroll >= -145 ? this.toggleNewTop = true : this.toggleNewTop = false;
+      //val.target.innerWidth <= 991 ? this.inMobile = true : this.inMobile = false;
     },
     downloadqRCodeImage() {
       let e = this.$refs.qrcode;
@@ -1771,12 +1779,13 @@ h1 {
 }
 
 .new-child-box {
+  transition: all 0.3s ease;
   position: fixed;
   border: 0px solid #8688d6;
   background: #FFFFFF38;
   width: 100%;
   max-width: 437px;
-  top: 114px;
+  top: 162px;
   right: 42px;
   border-radius: 8px;
   box-shadow: 4px 17px 52px -3px #6768c5;
@@ -1817,6 +1826,10 @@ h1 {
 
 h3 > div {
   font-size: 25px;
+}
+
+.new-top {
+  top: 61px;
 }
 </style>
 
