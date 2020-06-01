@@ -34,13 +34,13 @@
           <div class="d-flex justify-content-center align-items-center mb-0 my-4 flex-column">
             
             <div class="mt-3 logos-box white-bg">
-              <div>
+              <div class="d-flex flex-wrap justify-content-center">
                 <a target="_blank" v-for="(logo, index) in logos" :key="'logo_' + index" :href="logo.link">
                   <img class="mx-3 header-logo" :src="logo.logo"/>
                 </a>
               </div>
             </div>
-            <h3 class="text-center mb-0">Church PayNow QR Code Generator
+            <h3 class="text-center mb-0 mt-2">Church PayNow QR Code Generator
 (BSS-HIA-TQ)</h3>
             
           </div>
@@ -617,7 +617,7 @@
                 <div class="new-box px-4 pb-4" >
                   <div class="d-flex justify-content-center align-items-center mb-0 my-4 flex-column">
                     <div class="logos-box mb-3">
-                      <div>
+                      <div class="d-flex flex-wrap justify-content-center">
                         <a target="_blank" v-for="(logo, index) in logos" :key="'logo_' + index" :href="logo.link">
                           <img class="mx-3 header-logo" :src="logo.logo"/>
                         </a>
