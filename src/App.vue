@@ -1222,7 +1222,7 @@ let getInitialData = () => {
         textAlign: 'center',
         textColor: '#000000',
       },
-      toggleNewTop: false
+      toggleNewTop: true
     }
 }
 
