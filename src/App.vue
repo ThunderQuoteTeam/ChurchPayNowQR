@@ -83,7 +83,7 @@
                             :options="[{text: 'Yes', value: true}, {text: 'No', value: false}]"
                           ></b-form-radio-group>
                           <template slot="description">
-                            <p class="text-white">Whether or not to allow editing of payment amount.</p>
+                            <p class="text-white">Whether or not to allow donor to edit payment amount.</p>
                           </template>
 
                         </b-form-group>
@@ -99,7 +99,7 @@
                         >
                           <b-form-input :debounce="debouncer" id="amount" size="sm" v-model.lazy="qrForm.amount" v-money="money"></b-form-input>
                           <template slot="description">
-                            <p class="text-white">The amount to pay.</p>
+                            <p class="text-white">Amount for donor to pay.</p>
                           </template>
                         </b-form-group>
                       </div>
@@ -168,7 +168,7 @@
                               size="sm"
                               id="custom-logo"
                               v-model="customLogo"
-                              :options="[{text: 'Yes', value: true}, {text: 'No', value: false}, {text:'Use Text', value:'text'}]"
+                              :options="[{text: 'Yes', value: true}, {text: 'No', value: false}, {text:'Input Text', value:'text'}]"
                             ></b-form-radio-group>
                           </b-form-group>
                         </div>
@@ -666,7 +666,7 @@
                               :options="[{text: 'Yes', value: true}, {text: 'No', value: false}]"
                             ></b-form-radio-group>
                             <template slot="description">
-                              <p class="text-white">Whether or not to allow editing of payment amount.</p>
+                              <p class="text-white">Whether or not to allow donor to edit payment amount.</p>
                             </template>
 
                           </b-form-group>
@@ -682,7 +682,7 @@
                           >
                             <b-form-input :debounce="debouncer" id="amount" size="sm" v-model.lazy="qrForm.amount" v-money="money"></b-form-input>
                             <template slot="description">
-                              <p class="text-white">The amount to pay.</p>
+                              <p class="text-white">Amount for donor to pay.</p>
                             </template>
                           </b-form-group>
                         </div>
@@ -751,7 +751,7 @@
                                 size="sm"
                                 id="custom-logo"
                                 v-model="customLogo"
-                                :options="[{text: 'Yes', value: true}, {text: 'No', value: false},{text:'Use Text', value:'text'}]"
+                                :options="[{text: 'Yes', value: true}, {text: 'No', value: false},{text:'Input Text', value:'text'}]"
                               ></b-form-radio-group>
                             </b-form-group>
                           </div>
@@ -1178,7 +1178,7 @@ let getInitialData = () => {
       qrForm: {
         uen:'',           //Required: UEN of company
         amount : '500.00',               //Specify amount of money to pay.
-        editable: true,             //Whether or not to allow editing of payment amount. Defaults to false if amount is specified
+        editable: true,             //Whether or not to allow donor to edit payment amount. Defaults to false if amount is specified
         expiry: '',         //Set an expiry date for the Paynow QR code (YYYYMMDD). If omitted, defaults to 5 years from current time.
         refNumber: '',   //Reference number for Paynow Transaction. Useful if you need to track payments for recouncilation.
         company:  ''   //Company name to embed in the QR code. Optional.               
