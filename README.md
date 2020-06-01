@@ -7,4 +7,4 @@ Have any questions or need help to do a custom implementation?
 
 Feel free to drop us an email at hello@thunderquote.com.
 
-This branch is used for generating the demo page at http://code.thunderquote.com/PaynowQR/ 
+This branch is used for generating the demo page at http://code.thunderquote.com/ChurchPayNowQR/
