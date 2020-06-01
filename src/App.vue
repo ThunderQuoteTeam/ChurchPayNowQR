@@ -32,13 +32,16 @@
       <div class="main-container" :class="{'color-white': inMobile}">
         <div v-if="inMobile" class="d-flex justify-content-center flex-column mt-0 mb-4 mx-3">
           <div class="d-flex justify-content-center align-items-center mb-0 my-4 flex-column">
-            <h3 class="text-center mb-0 mt-3">Church PayNow QR Code Generator
-(BSS-HIA-TQ)</h3>
-            <div class="mb-0 logos-box">
-              <a target="_blank" v-for="(logo, index) in logos" :key="'logo_' + index" :href="logo.link">
-                <img class="mx-3 header-logo" :src="logo.logo"/>
-              </a>
+            
+            <div class="mt-3 logos-box white-bg">
+              <div>
+                <a target="_blank" v-for="(logo, index) in logos" :key="'logo_' + index" :href="logo.link">
+                  <img class="mx-3 header-logo" :src="logo.logo"/>
+                </a>
+              </div>
             </div>
+            <h3 class="text-center mb-0">Church PayNow QR Code Generator
+(BSS-HIA-TQ)</h3>
             
           </div>
           <div class="main-box full-width full-height">
@@ -613,15 +616,18 @@
             <div class="new-box-container flex-column mb-5 d-flex justify-content-center align-items-center">
                 <div class="new-box px-4 pb-4">
                   <div class="d-flex justify-content-center align-items-center mb-0 my-4 flex-column">
-                    <h3 class="text-center mb-3">
+                    <div class="logos-box mb-3">
+                      <div>
+                        <a target="_blank" v-for="(logo, index) in logos" :key="'logo_' + index" :href="logo.link">
+                          <img class="mx-3 header-logo" :src="logo.logo"/>
+                        </a>
+                      </div>
+                    </div>
+                    <h3 class="text-center">
                       <div>Church PayNow QR Code Generator</div>
                       <div>(BSS-HIA-TQ)</div>
                     </h3>
-                    <div class="logos-box">
-                      <a target="_blank" v-for="(logo, index) in logos" :key="'logo_' + index" :href="logo.link">
-                        <img class="mx-3 header-logo" :src="logo.logo"/>
-                      </a>
-                    </div>
+                    
                     
                   </div>
                   <b-row class="mx-0">
@@ -1561,7 +1567,7 @@ body {
 }
 
 .col-box-first {
-  background: #5455bbb0;
+  background: #5455bbe0;
 }
 
 .corners-first {
@@ -1749,7 +1755,7 @@ h1 {
 } 
 
 .new-box {
-  background: #5455bbb0;
+  background: #5455bbe0;
   width: 800px;
   border-radius: 4px;
   /* border: 3px solid #8c8cfa; */
@@ -1797,7 +1803,6 @@ h1 {
 }
 
 .logos-box {
-  background: #ffffff;
   border-radius: 5px;
   width: 100%;
   display: flex;
@@ -1806,6 +1811,12 @@ h1 {
   justify-content: center;
 }
 
+.white-bg {
+  background: #ffffff;
+}
 
+h3 > div {
+  font-size: 25px;
+}
 </style>
 
