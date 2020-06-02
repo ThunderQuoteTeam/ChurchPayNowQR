@@ -129,9 +129,9 @@
                           label-for="refnumber"
                           label-size="sm"
                         >
-                          <b-form-input :debounce="debouncer" id="refnumber" size="sm" v-model="qrForm.refNumber"></b-form-input>
+                          <b-form-input :debounce="debouncer" id="refnumber" size="sm" v-model="qrForm.refNumber" lazy-formatter :formatter="processRef" placeholder="E.g.: Ref1234"></b-form-input>
                           <template slot="description">
-                            <p class="text-white">Reference number for Paynow Transaction. Useful if you need to track payments for recouncilation.</p>
+                            <p class="text-white">Reference number for PayNow Transaction. Useful if you need to track payments for recouncilation. Only accepts alphanumeric, and no spaces (a-z/A-Z and 0-9).</p>
                           </template>
                         </b-form-group>
                       </div>
@@ -706,17 +706,17 @@
 
                         <div>
                           <b-form-group
-                            label-cols-sm="4"
-                            label-cols-lg="3"
-                            label="Reference Number:"
-                            label-for="refnumber"
-                            label-size="sm"
-                          >
-                            <b-form-input :debounce="debouncer" id="refnumber" size="sm" v-model="qrForm.refNumber"></b-form-input>
-                            <template slot="description">
-                              <p class="text-white">Reference number for Paynow Transaction. Useful if you need to track payments for recouncilation.</p>
-                            </template>
-                          </b-form-group>
+                          label-cols-sm="4"
+                          label-cols-lg="3"
+                          label="Reference Number:"
+                          label-for="refnumber"
+                          label-size="sm"
+                        >
+                          <b-form-input :debounce="debouncer" id="refnumber" size="sm" v-model="qrForm.refNumber" lazy-formatter :formatter="processRef" placeholder="E.g.: Ref1234"></b-form-input>
+                          <template slot="description">
+                            <p class="text-white">Reference number for PayNow Transaction. Useful if you need to track payments for recouncilation. Only accepts alphanumeric, and no spaces (a-z/A-Z and 0-9).</p>
+                          </template>
+                        </b-form-group>
                         </div>
 
 
@@ -1309,6 +1309,10 @@ export default {
     window.addEventListener('scroll', this.scrollHandler);
   },
   methods: {
+    processRef(val) {
+      console.log(val, val.replace(/[\W_]+/g," "))
+      return val.replace(/[\W_]+/g,"");
+    },
     padZero(str,len) {
       len = len || 2;
       let zeros = new Array(len).join('0');
