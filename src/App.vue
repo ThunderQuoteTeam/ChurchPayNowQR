@@ -346,7 +346,7 @@
                                   label-size="sm"
                                   class="mt-2"
                                 >
-                                  <b-form-input :debounce="debouncer" id="logo-width" size="sm" type="range" step="1" min="1" max="121" v-model="qrLogo.logoHeightWidth"></b-form-input>
+                                  <b-form-input :debounce="debouncer" id="logo-width" size="sm" type="range" step="1" min="1" max="120" v-model="qrLogo.logoHeightWidth"></b-form-input>
                                 </b-form-group>
                               </div>
 
@@ -960,7 +960,7 @@
                                 label-size="sm"
                                 class="mt-2"
                               >
-                                <b-form-input :debounce="debouncer" id="logo-size" size="sm" type="range" step="1" min="1" max="121" v-model="qrLogo.logoHeightWidth"></b-form-input>
+                                <b-form-input :debounce="debouncer" id="logo-size" size="sm" type="range" step="1" min="1" max="120" v-model="qrLogo.logoHeightWidth"></b-form-input>
                               </b-form-group>
                             </div>
 
