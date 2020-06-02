@@ -26,6 +26,7 @@
         <canvas id="textCanvas" width="500" height="500"></canvas>
         <code v-if="false">
           <b-form-textarea id="textarea-code-output" class="output-text" :rows="5" readonly v-model="output" no-resize/>
+          <b-form-textarea id="textarea-code-output" class="output-text" :rows="5" readonly v-model="output" no-resize/>
         </code>
       </div>
       
@@ -543,7 +544,7 @@
                 </b-col>
                 <b-col sm="12" lg="6" xl="6" class="col-box col-box-second p-4" :class="{'corners-second': !inMobile, 'corners-mobile-second': inMobile}">
                   <div v-if="qrForm.uen" class="second-box-content-container">
-                    <div>
+                    <div v-if="false">
                       <label>QR Code Text Output (click on this box to copy):</label>
                       <div>
                         <code>
