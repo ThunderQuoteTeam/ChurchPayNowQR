@@ -556,7 +556,7 @@
                       <label>QR Code Image Output:</label>
                       <div :class="{'qr-image-container': !inMobile}" class="d-flex justify-content-center align-items-center">
                         <div v-show="!generating">
-                          <div :class="{'qr-image-container': !inMobile}" id="qr-image" ref="qrcode" @click="downloadqRCodeImage" class="d-flex justify-content-center align-items-center"></div>
+                          <div :class="{'qr-image-container': !inMobile}" id="qr-image" ref="qrcode" @click="downloadqRCodeImage" class="d-flex justify-content-center align-items-center mt-4 mb-2"></div>
                         </div>
                         <div v-show="generating">
                           <p>Generating...</p>
@@ -600,7 +600,7 @@
                 </div>
                 <div :class="{'qr-image-container': !inMobile}" class="d-flex justify-content-center align-items-center">
                   <div v-show="!generating">
-                    <div :class="{'qr-image-container': !inMobile}" id="qr-image" ref="qrcode" @click="downloadqRCodeImage" class="d-flex justify-content-center align-items-center"></div>
+                    <div :class="{'qr-image-container': !inMobile}" id="qr-image" ref="qrcode" @click="downloadqRCodeImage" class="d-flex justify-content-center align-items-center mt-4 mb-2"></div>
                   </div>
                   <div v-show="generating">
                     <p>Generating...</p>
